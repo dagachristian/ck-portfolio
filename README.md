@@ -1,3 +1,5 @@
 # CK-Portfolio
 
-Build using three.js
+This is my amazing portfolio
+
+Built using three.js
