@@ -30,7 +30,7 @@ const starMaterial = new three.MeshStandardMaterial({ color: 0xffffff })
 function addStar() {
   const star = new three.Mesh(starGeometry, starMaterial)
   const [ x, y, z ] = Array(3).fill().map(() => three.MathUtils.randFloatSpread(100))
-  star.position.set(x, y, z);
+  star.position.set(x, y, z)
   scene.add(star)
 }
 Array(200).fill().forEach(addStar)
@@ -105,8 +105,8 @@ function moveCamera() {
   if (!boom) {
     if (t < -1.9) {
       scene.remove(earth, pointLight, torus, explosion)
-      me.position.set(0,0,0)
-      me.material.map = meAngry;
+      me.position.set(2,0,8)
+      me.material.map = meAngry
       boom = true
     } else {
       me.rotation.z = -1 + t * 3
@@ -135,6 +135,11 @@ function moveCamera() {
   }
 }
 document.body.onscroll = moveCamera
+document.body.onresize = function resize() {
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(window.innerWidth, window.innerHeight)
+}
 
 function animate() {
   requestAnimationFrame(animate)
