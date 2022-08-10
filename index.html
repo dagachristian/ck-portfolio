@@ -9,21 +9,39 @@
       name="description"
       content="Christian Daga's Portfolio"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   </head>
   <body>
     <canvas id="bg"></canvas>
     <main>
-      <header>
-        <h1>Hi, I'm Christian Daga</h1>
-        <p>Software Engineer</p>
+      <header id="header" class="container">
+        <div>
+          <h1>Hi, I'm Christian Daga</h1>
+          <p>Software Engineer</p>
+          <div class="socials">
+            <a href="https://github.com/dagachristian">
+              <img src="/github.png" alt="Github" width="20"/>
+            </a>
+            <a href="https://www.linkedin.com/in/christiandaga/">
+              <img src="/linkedin.png" alt="LinkedIn" width="20"/>
+            </a>
+          </div>
+        </div>
+        <img src="/me.jpg" width="150px" height="150px" style="margin-left: auto;" />
       </header>
-      <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-          <li>
-            <a href="https://eplace.jarasicrabit.com">EPlace</a>
-          </li>
-        </ul>
+      <section id="projects" class="container">
+        <h1>Projects</h1>
+        <dl style="display:flex;gap:20px;">
+          <a href="https://eplace.jarasicrabit.com">
+            <dt class="project">
+              <img class="thumbnail" src="/eplacecanvas.png" alt="Eplace Canvas" />
+              <div>
+                <h2>Everyplace</h2>
+                <p>Make your own r/place</p>
+              </div>
+            </dt>
+          </a>
+        </dl>
       </section>
     </main>
     <script type="module" src="/main.js"></script>

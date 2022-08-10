@@ -110,10 +110,7 @@ function moveCamera() {
       boom = true
     } else {
       me.rotation.z = -1 + t * 3
-
-      me.position.z = 15 + t * 10
-      me.position.x = 15 + t * 10
-      me.position.y = 5 + t * 4
+      me.position.set(15 + t * 10, 5 + t * 4, 15 + t * 10)
     }
 
     if (t < -1.1) {
@@ -122,15 +119,12 @@ function moveCamera() {
       explosion.position.z = -10 + t * -10
       ambientLight.intensity = 1
     } else {
-      explosion.scale.x = 0
-      explosion.scale.y = 0
+      explosion.scale.set(0, 0, 0)
       explosion.position.z = 0
       ambientLight.intensity = 0.2
     }
 
-    camera.position.z = 7 + t * -10
-    camera.position.x = -3 + t * -0.2
-    camera.position.y = t * -0.2
+    camera.position.set(-3 + t * -0.2, t * -0.2, 7 + t * -10)
     camera.rotation.y = t * 0.13
   }
 }
